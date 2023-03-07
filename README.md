@@ -16,3 +16,6 @@ Earn points for each correct answer and try to beat your high score
 Whether you're a geography buff or just looking for a fun and challenging game, Flag Quiz is the perfect choice for you. Download now and test your knowledge of flags from around the world!
 
 
+![alt text](https://github.com/sharifi98/GuessTheFlag/blob/main/Screenshot%202023-03-07%20at%2015.01.19.png)
+![alt text](https://github.com/sharifi98/GuessTheFlag/blob/main/Screenshot%202023-03-07%20at%2015.01.27.png)
+
