@@ -1,4 +1,4 @@
-# GuessTheFlag
+# Guess The Flag
 Guess the flag is a fun and addictive iOS game that tests your knowledge of flags from around the world. The game presents you with three flags and you must guess the correct one.
 
 With over 10 flags from different countries, the game offers a challenging and educational experience for players of all ages. The gameplay is simple but engaging, making it perfect for quick sessions or extended play.
