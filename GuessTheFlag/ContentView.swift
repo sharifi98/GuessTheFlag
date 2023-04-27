@@ -25,6 +25,8 @@ extension View {
 
 struct ContentView: View {
     // State variables
+    @State private var streakCount = 0
+    @State private var wrongFlagIndex: Int?
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
@@ -68,6 +70,7 @@ struct ContentView: View {
                             Image(countries[index])
                                 .flagImage()
                         }
+                        .scaleEffect(spinningFlagIndex != index ? 1 : 1.25)
                         .rotation3DEffect(.degrees(spinningFlagIndex == index ? 360 : 0), axis: (x: 0, y: 1, z: 0))
                     }
                 }
@@ -77,6 +80,12 @@ struct ContentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 Spacer()
+                
+                // Display the streak counter
+                Text("Streak: \(streakCount)")
+                    .foregroundColor(.white)
+                    .font(.title.bold())
+                
                 Spacer()
                 
                 // Display the score
@@ -100,14 +109,16 @@ struct ContentView: View {
         if index == correctAnswer {
             scoreTitle = "Correct"
             correctCount += 1
+            streakCount += 1
+            wrongFlagIndex = nil
         } else {
             scoreTitle = "Wrong"
+            wrongFlagIndex = index
+            streakCount = 0
         }
         showingScore = true
     }
-    
-    // Function to present
-    
+        
     // Function to present the next question
     func askQuestion() {
         countries.shuffle()
